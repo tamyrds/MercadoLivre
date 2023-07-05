@@ -16,8 +16,11 @@ class home {
         
         cy.contains('a', 'Crie a sua conta').should('be.visible')
             .click()
-        cy.contains(mensagem.mensagemCreate).should('be.visible')
+            cy.contains(mensagem.mensagemCreate).should('be.visible') // Valida mensagem
+        cy.wait(1000)
         cy.get(elem.terms).click()
+        cy.get(elem.botaoCriarContaPessoal).click()
+            cy.contains(mensagem.mensagemCreateAccount).should('be.visible')
     }
 
 }
