@@ -4,10 +4,12 @@ import home from "../pages/home"
 describe('testing home page', () => {
 
     beforeEach(() => {
-    home.visit()
+    cy.visit('https://www.mercadolivre.com.br')
+    cy.wait(2500)
 })
   it('Create Account', () => {
-    home.visit()
+    
     home.createAccount()
+    home.digitaEmail()
   });
 })
